@@ -16,6 +16,8 @@ const(
 	ParamTZ = "TZ"
 )
 
+const timestampLayout = "20060102T150405Z"
+
 //https://tools.ietf.org/html/rfc6350#section-6
 //vcard properties
 
@@ -263,7 +265,7 @@ const(
 	      Mail Drop: TNE QB\n123 Main Street\nAny Town, CA  91921-1234\n
 	      U.S.A.":;;123 Main Street;Any Town;CA;91921-1234;U.S.A.
 	 */
-
+	PropAdr = "ADR"
 
 	//Communications Properties
 	/*
@@ -783,6 +785,23 @@ const(
 	     CALURI;MEDIATYPE=text/calendar:ftp://ftp.example.com/calA.ics
 	 */
 	PropCalUri = "CALURI"
+
+)
+
+const(
+	KindIndividual = "individual"
+	KindGroup = "group"
+	KindOrg = "org"
+	KindLocation = "location"
+)
+
+const (
+	SexUnspecified  = ""
+	SexFemale       = "F"
+	SexMale         = "M"
+	SexOther        = "O"
+	SexNone         = "N"
+	SexUnknown      = "U"
 )
 
 

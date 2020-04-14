@@ -101,14 +101,23 @@ func newName(p *Property) *Name {
 func (n *Name) property() *Property {
 	if n.Property == nil{
 		n.Property = new(Property)
+		n.Property.Value = [][]string{{
+			n.FamilyName,
+			n.GivenName,
+			n.AdditionalName,
+			n.HonorificPrefix,
+			n.HonorificSuffix,
+		}}
+	}else{
+		n.Property.Value = append(n.Property.Value,[]string{
+			n.FamilyName,
+			n.GivenName,
+			n.AdditionalName,
+			n.HonorificPrefix,
+			n.HonorificSuffix,
+		})
 	}
-	n.Property.Value[0] = []string{
-		n.FamilyName,
-		n.GivenName,
-		n.AdditionalName,
-		n.HonorificPrefix,
-		n.HonorificSuffix,
-	}
+
 	return n.Property
 }
 
