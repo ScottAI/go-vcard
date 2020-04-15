@@ -151,7 +151,7 @@ func (a *Address) property() *Property {
 	if a.Property == nil {
 		a.Property = new(Property)
 	}
-	a.Property.Value[0] = []string{
+	a.Property.Value = append(a.Property.Value,[]string{
 		a.PostOfficeBox,
 		a.ExtendedAddress,
 		a.StreetAddress,
@@ -159,7 +159,7 @@ func (a *Address) property() *Property {
 		a.Region,
 		a.PostalCode,
 		a.Country,
-	}
+	})
 	return  a.Property
 }
 

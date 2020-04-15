@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ffcf941d-2737-44fd-9194-831c0aac124b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/card_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/decoder.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/encoder.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/encoder_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/help.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/defs.go" beforeDir="false" afterPath="$PROJECT_DIR$/defs.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/card_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/card_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/encoder.go" beforeDir="false" afterPath="$PROJECT_DIR$/encoder.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/encoder_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/encoder_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/property.go" beforeDir="false" afterPath="$PROJECT_DIR$/property.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vcard.go" beforeDir="false" afterPath="$PROJECT_DIR$/vcard.go" afterDir="false" />
     </list>
@@ -44,7 +41,67 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
+  <component name="RunManager" selected="Go Test.card_test.go">
+    <configuration name="card_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-vcard" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="FILE" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/card_test.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="encoder_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-vcard" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="FILE" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/encoder_test.go" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Test.card_test.go" />
+        <item itemvalue="Go Test.encoder_test.go" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1398" height="268" key="GridCell.Tab.0.bottom" timestamp="1586915100273">
+      <screen x="0" y="23" width="1440" height="833" />
+    </state>
+    <state width="1398" height="268" key="GridCell.Tab.0.bottom/0.23.1440.833@0.23.1440.833" timestamp="1586915100273" />
+    <state width="1398" height="268" key="GridCell.Tab.0.center" timestamp="1586915100272">
+      <screen x="0" y="23" width="1440" height="833" />
+    </state>
+    <state width="1398" height="268" key="GridCell.Tab.0.center/0.23.1440.833@0.23.1440.833" timestamp="1586915100272" />
+    <state width="1398" height="268" key="GridCell.Tab.0.left" timestamp="1586915100272">
+      <screen x="0" y="23" width="1440" height="833" />
+    </state>
+    <state width="1398" height="268" key="GridCell.Tab.0.left/0.23.1440.833@0.23.1440.833" timestamp="1586915100272" />
+    <state width="1398" height="268" key="GridCell.Tab.0.right" timestamp="1586915100272">
+      <screen x="0" y="23" width="1440" height="833" />
+    </state>
+    <state width="1398" height="268" key="GridCell.Tab.0.right/0.23.1440.833@0.23.1440.833" timestamp="1586915100272" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/encoder_test.go</url>
+          <line>10</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/encoder.go</url>
+          <line>17</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

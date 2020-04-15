@@ -8,106 +8,114 @@ import (
 )
 
 var testCard = Card{
-	"VERSION": []*Property{{Value:[][]string{{"4.0"}}}},
-	"UID":     []*Property{{Value: [][]string{{"urn","uuid","4fbe8971-0bc3-424c-9c26-36c3e1eff6b1"}}}},
-	"FN": []*Property{{
+	"VERSION": []*Property{{Value:[][]string{{"4.0"}},Name:"VERSION"}},
+	"UID":     []*Property{{Name:"UID",Value: [][]string{{"urn:uuid:4fbe8971-0bc3-424c-9c26-36c3e1eff6b1"}}}},
+	"FN": []*Property{{Name:"FN",
 		Value:  [][]string{{"J. Doe"}},
 		Params: map[string][]string{"PID": {"1.1"}},
 	}},
-	"N": []*Property{{Value: [][]string{{"Doe"},{"J."},{""},{""},{""}}}},
-	"EMAIL": []*Property{{
+	"N": []*Property{{Name:"N",Value: [][]string{{"Doe"},{"J."},{""},{""},{""}}}},
+	"EMAIL": []*Property{{Name:"EMAIL",
 		Value:  [][]string{{"jdoe@example.com"}},
 		Params: map[string][]string{"PID": {"1.1"}},
 	}},
-	"CLIENTPIDMAP": []*Property{{Value: [][]string{{"1"},{"urn","uuid","53e374d9-337e-4727-8803-a1e9c14e0556"}}}},
+	"CLIENTPIDMAP": []*Property{{Name:"CLIENTPIDMAP",Value: [][]string{{"1"},{"urn:uuid:53e374d9-337e-4727-8803-a1e9c14e0556"}}}},
 }
 
 var testCardHandmade = Card{
-	"VERSION": []*Property{{Value: [][]string{{"4.0"}}}},
-	"N":       []*Property{{Value: [][]string{{"Bloggs"},{"Joe"},{""},{""},{""}}}},
-	"FN":      []*Property{{Value: [][]string{{"Joe Bloggs"}}}},
-	"EMAIL": []*Property{{
+	"BEGIN": []*Property{{Name:"BEGIN",Value:[][]string{{"VCARD"}}}},
+	"VERSION": []*Property{{Name:"VERSION",Value: [][]string{{"4.0"}}}},
+	"N":       []*Property{{Name:"N",Value: [][]string{{"Bloggs"},{"Joe"},{""},{""},{""}}}},
+	"FN":      []*Property{{Name:"FN",Value: [][]string{{"Joe Bloggs"}}}},
+	"EMAIL": []*Property{{Name:"EMAIL",
 		Value:  [][]string{{"me@joebloggs.com"}},
 		Params: map[string][]string{"TYPE":{"home"},"PREF":{"1"}},
 	}},
-	"TEL": []*Property{{
+	"TEL": []*Property{{Name:"TEL",
 		Value:  [][]string{{"tel","+44 20 1234 5678"}},
 		Params: map[string][]string{"TYPE": {"cell", "home"}, "PREF": {"1"}},
 	}},
-	"ADR": []*Property{{
+	"ADR": []*Property{{Name:"ADR",
 		Value:  [][]string{{""},{""},{"1 Trafalgar Square"},{"London"},{""},{"WC2N"},{"United Kingdom"}},
 		Params: map[string][]string{"TYPE": {"home"}, "PREF": {"1"}},
 	}},
-	"URL": []*Property{{
+	"URL": []*Property{{Name:"URL",
 		Value:  [][]string{{"http://joebloggs.com"}},
 		Params: map[string][]string{"TYPE": {"home"}, "PREF": {"1"}},
 	}},
-	"IMPP": []*Property{{
+	"IMPP": []*Property{{Name:"IMPP",
 		Value:  [][]string{{"skype:joe.bloggs"}},
 		Params: map[string][]string{"TYPE": {"home"}, "PREF": {"1"}},
 	}},
-	"X-SOCIALPROFILE": []*Property{{
+	"X-SOCIALPROFILE": []*Property{{Name:"X-SOCIALPROFILE",
 		Value:  [][]string{{"twitter:https://twitter.com/joebloggs"}},
 		Params: map[string][]string{"TYPE": {"home"}, "PREF": {"1"}},
 	}},
+	"END":[]*Property{{Name:"END",Value:[][]string{{"VCARD"}}}},
 }
 
 var testCardGoogle = Card{
-	"VERSION": []*Property{{Value: [][]string{{"3.0"}}}},
-	"N":       []*Property{{Value: [][]string{{"Bloggs"},{"Joe"},{""},{""}}}},
-	"FN":      []*Property{{Value: [][]string{{"Joe Bloggs"}}}},
-	"EMAIL": []*Property{{
+	"VERSION": []*Property{{Name:"VERSION",Value: [][]string{{"3.0"}}}},
+	"N":       []*Property{{Name:"N",Value: [][]string{{"Bloggs"},{"Joe"},{""},{""}}}},
+	"FN":      []*Property{{Name:"FN",Value: [][]string{{"Joe Bloggs"}}}},
+	"EMAIL": []*Property{{Name:"EMAIL",
 		Value:  [][]string{{"me@joebloggs.com"}},
 		Params: map[string][]string{"TYPE": {"INTERNET", "HOME"}},
 	}},
-	"TEL": []*Property{{
+	"TEL": []*Property{{Name:"TEL",
 		Value:  [][]string{{"+44 20 1234 5678"}},
 		Params: map[string][]string{"TYPE": {"CELL"}},
 	}},
-	"ADR": []*Property{{
+	"ADR": []*Property{{Name:"ADR",
 		Value:  [][]string{{""},{""},{"1 Trafalgar Square"},{"London"},{""},{"WC2N"},{"United Kingdom"}},
 		Params: map[string][]string{"TYPE": {"HOME"}},
 	}},
 	"URL": []*Property{
-		{Value: [][]string{{"http\\://joebloggs.com"}}, Group: "item1"},
-		{Value: [][]string{{"http\\://twitter.com/test"}}, Group: "item2"},
+		{Name:"URL",Value: [][]string{{"http\\://joebloggs.com"}}, Group: "item1"},
+		{Name:"URL",Value: [][]string{{"http\\://twitter.com/test"}}, Group: "item2"},
 	},
-	"X-SKYPE": []*Property{{Value: [][]string{{"joe.bloggs"}}}},
+	"X-SKYPE": []*Property{{Name:"X-SKYPE",Value: [][]string{{"joe.bloggs"}}}},
 	"X-ABLABEL": []*Property{
-		{Value: [][]string{{"_$!<HomePage>!$_"}}, Group: "item1"},
-		{Value: [][]string{{"Twitter"}}, Group: "item2"},
+		{Name:"X-ABLABEL",Value: [][]string{{"_$!<HomePage>!$_"}}, Group: "item1"},
+		{Name:"X-ABLABEL",Value: [][]string{{"Twitter"}}, Group: "item2"},
 	},
 }
 
 var testCardApple = Card{
-	"VERSION": []*Property{{Value: [][]string{{"3.0"}}}},
-	"N":       []*Property{{Value: [][]string{{"Bloggs"},{"Joe"},{""},{""}}}},
-	"FN":      []*Property{{Value: [][]string{{"Joe Bloggs"}}}},
+	"VERSION": []*Property{{Name:"VERSION",Value: [][]string{{"3.0"}}}},
+	"N":       []*Property{{Name:"N",Value: [][]string{{"Bloggs"},{"Joe"},{""},{""}}}},
+	"FN":      []*Property{{Name:"FN",Value: [][]string{{"Joe Bloggs"}}}},
 	"EMAIL": []*Property{{
+		Name:"EMAIL",
 		Value:  [][]string{{"me@joebloggs.com"}},
 		Params: map[string][]string{"TYPE": {"INTERNET", "HOME", "pref"}},
 	}},
 	"TEL": []*Property{{
+		Name:"TEL",
 		Value:  [][]string{{"+44 20 1234 5678"}},
 		Params: map[string][]string{"TYPE": {"CELL", "VOICE", "pref"}},
 	}},
 	"ADR": []*Property{{
+		Name:"ADR",
 		Value:  [][]string{{""},{""},{"1 Trafalgar Square"},{"London"},{},{"WC2N"},{"United Kingdom"}},
 		Params: map[string][]string{"TYPE": {"HOME", "pref"}},
 	}},
 	"URL": []*Property{{
+		Name:"URL",
 		Value:  [][]string{{"http://joebloggs.com"}},
 		Params: map[string][]string{"TYPE": {"pref"}},
 		Group:  "item1",
 	}},
 	"X-ABLABEL": []*Property{
-		{Value: [][]string{{"_$!<HomePage>!$_"}}, Group: "item1"},
+		{Name:"X-ABLABEL",Value: [][]string{{"_$!<HomePage>!$_"}}, Group: "item1"},
 	},
 	"IMPP": []*Property{{
+		Name:"IMPP",
 		Value:  [][]string{{"skype:joe.bloggs"}},
 		Params: map[string][]string{"X-SERVICE-TYPE": {"Skype"}, "TYPE": {"HOME", "pref"}},
 	}},
 	"X-SOCIALPROFILE": []*Property{{
+		Name:"X-SOCIALPROFILE",
 		Value:  [][]string{{"https://twitter.com/joebloggs"}},
 		Params: map[string][]string{"TYPE": {"twitter"}},
 	}},
@@ -133,8 +141,8 @@ func TestCard(t *testing.T) {
 
 	cardMultipleValues := Card{
 		"EMAIL": []*Property{
-			{Value: [][]string{{"me@example.org"}}, Params: map[string][]string{"TYPE": {"home"}}},
-			{Value: [][]string{{"me@example.com"}}, Params: map[string][]string{"TYPE": {"work"}}},
+			{Name:"EMAIL",Value: [][]string{{"me@example.org"}}, Params: map[string][]string{"TYPE": {"home"}}},
+			{Name:"EMAIL",Value: [][]string{{"me@example.com"}}, Params: map[string][]string{"TYPE": {"work"}}},
 		},
 	}
 	expected := [][][]string{{{"me@example.org"}}, {{"me@example.com"}}}
@@ -173,21 +181,21 @@ func TestCard_Preferred(t *testing.T) {
 	cards := []Card{
 		{
 			"EMAIL": []*Property{
-				{Value: [][]string{{"me@example.org"}}, Params: map[string][]string{"TYPE": {"home"}}},
-				{Value: [][]string{{"me@example.com"}}, Params: map[string][]string{"TYPE": {"work"}, "PREF": {"1"}}},
+				{Name:"EMAIL",Value: [][]string{{"me@example.org"}}, Params: map[string][]string{"TYPE": {"home"}}},
+				{Name:"EMAIL",Value: [][]string{{"me@example.com"}}, Params: map[string][]string{"TYPE": {"work"}, "PREF": {"1"}}},
 			},
 		},
 		{
 			"EMAIL": []*Property{
-				{Value: [][]string{{"me@example.org"}}, Params: map[string][]string{"TYPE": {"home"}, "PREF": {"25"}}},
-				{Value: [][]string{{"me@example.com"}}, Params: map[string][]string{"TYPE": {"work"}, "PREF": {"50"}}},
+				{Name:"EMAIL",Value: [][]string{{"me@example.org"}}, Params: map[string][]string{"TYPE": {"home"}, "PREF": {"25"}}},
+				{Name:"EMAIL",Value: [][]string{{"me@example.com"}}, Params: map[string][]string{"TYPE": {"work"}, "PREF": {"50"}}},
 			},
 		},
 		// v3.0
 		{
 			"EMAIL": []*Property{
-				{Value: [][]string{{"me@example.org"}}, Params: map[string][]string{"TYPE": {"home"}}},
-				{Value: [][]string{{"me@example.com"}}, Params: map[string][]string{"TYPE": {"work", "pref"}}},
+				{Name:"EMAIL",Value: [][]string{{"me@example.org"}}, Params: map[string][]string{"TYPE": {"home"}}},
+				{Name:"EMAIL",Value: [][]string{{"me@example.com"}}, Params: map[string][]string{"TYPE": {"work", "pref"}}},
 			},
 		},
 	}
@@ -227,7 +235,7 @@ func TestCard_Name(t *testing.T) {
 
 func TestCard_Kind(t *testing.T) {
 	card := make(Card)
-
+	card.SetKind(KindIndividual)
 	if kind := card.Kind(); kind != KindIndividual {
 		t.Errorf("Expected kind of empty card to be %q but got %q", KindIndividual, kind)
 	}
@@ -242,7 +250,7 @@ func TestCard_FormattedNames(t *testing.T) {
 	card := make(Card)
 
 	expectedNames := []*Property{{Value: [][]string{{""}}}}
-	if names := card.FormattedNames(); !reflect.DeepEqual(expectedNames, names) {
+	if names := card.FormattedNames(); !strings.EqualFold(MatrixToString(expectedNames[0].Value),MatrixToString(names[0].Value)) {
 		t.Errorf("Expected empty card formatted names to be %+v but got %+v", expectedNames, names)
 	}
 

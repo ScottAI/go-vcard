@@ -151,16 +151,26 @@ func (c Card) AddName(n *Name)  {
 
 func (c Card) Gender() (gen string,identity string) {
 	vals := c.Value(PropGender)
-	sex := vals[0][0]
-	iden := vals[1][0]
+	sex := ""
+	iden := ""
+	if len(vals) == 2{
+		sex = vals[0][0]
+		iden = vals[1][0]
+	}else if len(vals) == 1{
+		sex = vals[0][0]
+	}
 	return sex,iden
 }
 
 func (c Card) SetGender(gen string,identity string)  {
-	vals := make([][]string,2)
-	vals[0][0] = gen
-	vals[1][2] = identity
-	c.SetValue(PropGender,vals)
+	if gen == ""{
+		return
+	}
+	if identity == ""{
+		c.SetValue(PropGender,[][]string{{gen}})
+	}else {
+		c.SetValue(PropGender, [][]string{{gen},{identity}})
+	}
 }
 
 func (c Card) Addresses() []*Address {

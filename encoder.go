@@ -66,9 +66,16 @@ func (ec *Encoder) WriteProperty(prop *Property)  {
 	io.WriteString(ec.writer,":")
 	for si:=0;si < len(prop.Value);si++{
 		for vi := 0; vi < len(prop.Value[si]);vi++{
-
+			ec.WriteValue(prop.Value[si][vi])
+			if vi+1 < len(prop.Value[si]){
+				io.WriteString(ec.writer,",")
+			}
+		}
+		if si+1 < len(prop.Value){
+			io.WriteString(ec.writer,";")
 		}
 	}
+	io.WriteString(ec.writer,"\r\n")
 }
 
 func (ec *Encoder) WriteValue(val string)  {
@@ -86,8 +93,8 @@ func (ec *Encoder) WriteValue(val string)  {
 			e = `\n`
 		case ';':
 			e = `\;`
-		case ':':
-			e = `\:`
+		//case ':'://TODO:does this need?
+		//	e = `\:`
 		case ',':
 			e = `\,`
 		default:
